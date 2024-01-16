@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchvieww"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:queryHint="Search by Doctor's Name"
+        android:iconifiedByDefault="false" />
+    <TextView
+        android:id="@+id/noAppoinmentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Appoinment"
+        android:textSize="30dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        />
+    <Button
+        android:id="@+id/sortingBtn"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="#673AB7"
+        android:layout_height="wrap_content"
+        android:text="SortAsc"
+        android:layout_below="@id/searchvieww"
+        />
+    <Button
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:backgroundTint="#673AB7"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Pick Date"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@id/sortingBtn"
+        android:layout_below="@id/searchvieww"
+        />
+
+    <Button
+        android:id="@+id/allAppintment"
+        android:layout_width="wrap_content"
+        android:backgroundTint="#673AB7"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="All"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@id/datePicker"
+        android:layout_below="@id/searchvieww"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/doctorRecyclerView"
+        android:layout_below="@id/sortingBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_doctor_layout"
+        />
+
+</RelativeLayout>
